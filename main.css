@@ -129,7 +129,7 @@ nav .links:hover{
 }
 
 /* responsive nav bar */
-@media screen and (max-width:720px) {
+@media screen and (max-width:500px) {
     .options{
         display:none;
         position: fixed;

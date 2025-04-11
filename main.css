@@ -131,6 +131,7 @@ nav .links:hover{
 /* responsive nav bar */
 @media screen and (max-width:720px) {
     .options{
+        display:none;
         position: fixed;
         right: -200%;
         top: 0;
@@ -155,6 +156,7 @@ nav .links:hover{
     
     .show{
         right:0;
+        display:flex;
     }
     
 } 

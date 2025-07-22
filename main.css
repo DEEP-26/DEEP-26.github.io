@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Josefin+Sans:600');
 
 * {
     box-sizing: border-box;
@@ -72,7 +72,7 @@ section h2 {
 
 nav {
     position: fixed;
-    background-color:rgb(24, 112, 73,0.8);
+    background-color:rgb(24, 112, 73);
     width:100%;
     top: 0;
     min-height: 84px;
@@ -109,12 +109,13 @@ nav a{
     display: flex;
     text-decoration: none;
     color: white;
-    padding: 1em 1em;
+    padding: 1em 1.5em;
     transition:350ms ease-in-out;
+    font-weight: bolder;
 }
 
 nav .links:hover{
-    background-color: #717372;
+    text-decoration: underline;
 }
 
 
@@ -230,6 +231,7 @@ nav .links:hover{
   .imageB{
     text-align: center;
     margin-bottom: 20px;
+    font-size: 30px;
   }
   
   .gallery-container {
@@ -248,6 +250,7 @@ nav .links:hover{
     margin: auto;
     border-radius: 10px;
     padding-top: 10px;
+    margin-top: 50px;
   }
   
   .gallery-grid {
@@ -274,20 +277,19 @@ nav .links:hover{
 /* this is the foot of the website*/
             .footer {
                 background-color: var(--footer-color); 
-                                color: #ffffff;
+                height: 100%;
+                color: #f2f0f0;
                 font-family: 'Lato', sans-serif;
-                padding: 40px 20px;
                 text-align: center;
                 overflow: hidden;
                 padding: 15vh;
                 padding-left: 15vh;
+                
             }
             
             .footer a {
                 text-decoration: none;
-                padding: 20px;
-                float: left;
-                color: white;
+                color: inherit;
             }
             
             .footer-container {
@@ -355,15 +357,12 @@ nav .links:hover{
             .footer p {
                 margin: 0 0;
                 padding: 5px 0;
-                text-align: justify;
+                text-align: center;
+                font-size: large;
             }   
-            .disclaimer{
-              font-size: 20px;
-              text-align: center;
-            }
             
 /* responsive nav bar */
-@media screen and (max-width:500px) {
+@media screen and (max-width:768px) {
     .options{
         position: fixed;
         right: -100%;
@@ -402,6 +401,10 @@ nav .links:hover{
 
     main,footer {
         padding-left: 0%;
+    }
+
+    .footer p{
+      font-size: medium;
     }
 } 
 
@@ -451,7 +454,7 @@ nav .links:hover{
   /* Our Story Section */
   .story {
     padding: 50px 20px;
-    background-color: #ffffff;
+    background-color: rgba(80, 100, 93, 0.7);
     text-align: center;
     width: 100%;
   }
@@ -477,7 +480,7 @@ nav .links:hover{
     gap: 50px;
   }
   .event2 {
-    font-size: 38px;
+    font-size: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   .event {
@@ -488,7 +491,7 @@ nav .links:hover{
     position: relative;
     text-align: left;
     z-index: 0;
-    font-size: 24px;
+    font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
   }
   
@@ -509,47 +512,53 @@ nav .links:hover{
   }
   
   /* Team Section */
-  .team {
-    padding: 50px 20px;
-    text-align: center;
+  .team{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   
-  .team h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
+  .team .image_desk {
+    max-width: 100%;
+    height: auto;
+    display: none;
   }
-  
-  .team-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 30px;
-    justify-items: center;
+
+  .team .image_mobile {
+    max-width: 100%;
+    height: auto;
+    display: none;
   }
-  
-  .team-member img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: #4CAF50;
+
+  @media (max-width: 768px) {
+    .team .image_mobile{
+      display: block;
+    }
+
+    .team .image_desk{
+      display: none;
+    }
+    
   }
-  
-  .member-name {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px;
-    margin-top: 10px;
-    width: 100px;
-    border-radius: 5px;
-    font-size: 14px;
+  @media (min-width: 767px) {
+    .team .image_mobile{
+      display: none;
+    }
+
+    .team .image_desk{
+      display: block;
+    }
+    
   }
-  
+
   .section-container2 {
       display: flex;
       flex-wrap: wrap;
-      max-width: 100%;
+      max-width: 90%;
       padding: 20px;
       gap: 20px;
+      margin-top: 50px;
     }
 
     .size_r,
@@ -602,12 +611,29 @@ nav .links:hover{
     }
  
 
+
+    /* founder card*/
   .founder-section {
     text-align: center;
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
+    padding: 30px;
+    max-width: 90%;
+    max-height: fit-content;
+    margin: auto auto;
+    background-color: rgba(80, 100, 93, 0.7);
+    color: #f9f9f9;
+  }
+
+  .founder-section .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4%;
+    flex-wrap: wrap;
+  }
+
+  .founder {
+    transform: scale(1.2);
   }
 
   .founder-image {
@@ -616,7 +642,7 @@ nav .links:hover{
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 20px;
-    border: 3px solid #000;
+    border: 3px solid #f9f9f9;
   }
 
   .founder-image img {
@@ -627,9 +653,10 @@ nav .links:hover{
   }
 
   .founder-heading {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
+
   }
 
   .founder-name {
@@ -638,12 +665,18 @@ nav .links:hover{
   }
 
   .founder-quote {
+    font-family: "josefin sans",sans-serif;
     font-size: 16px;
     line-height: 1.6;
     margin-top: 10px;
     padding: 0 10px;
+    max-width: 60%;
   }
 
+  @media (max-width: 780px) {
+    .founder{
+      transform: scale(1);
+    }
     .founder-heading {
       font-size: 20px;
     }
@@ -652,10 +685,6 @@ nav .links:hover{
       font-size: 14px;
     }
 
-    .founder-image {
-      width: 150px;
-      height: 150px;
-    }
     /*newletter*/
     .unique{
        background-color: #006400;
@@ -663,7 +692,11 @@ nav .links:hover{
       text-align: center;
       color: white;
     }
-  
+
+    .founder-section .content{
+      flex-direction: column;
+    }
+  } 
 .newsletter-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -810,6 +843,8 @@ nav .links:hover{
   margin-top: 3rem;
 }
 
+
+
 @media (max-width: 768px) {
   .header-title {
     font-size: 1.6rem;
@@ -926,3 +961,5 @@ nav .links:hover{
       .hashtags {
         font-size: 13px;
       }
+    }
+  }

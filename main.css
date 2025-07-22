@@ -683,6 +683,7 @@ nav .links:hover{
 
     .founder-quote {
       font-size: 14px;
+      max-width: 100%;
     }
 
     /*newletter*/
